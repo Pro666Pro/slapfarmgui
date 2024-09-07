@@ -556,6 +556,122 @@ Slap:AddButton({
 	 end
 })
 
+Tab7:AddToggle({
+	Name = "Slap Aura",
+	Default = false,
+	Callback = function(Value)
+		SlapAura = Value
+		SlapAuraFriend = "Fight"
+		SlapAuraCharacter = "Head"
+		_G.SlapAuraChoose = "Normal"
+		_G.ReachSlapArua = 50
+if _G.SlapAuraChoose == "Normal" then
+while SlapAura and SlapAuraFriend == "Fight" and _G.SlapAuraChoose == "Normal" do
+pcall(function()
+for i,v in pairs(game.Players:GetChildren()) do
+                    if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
+if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("stevebody") == nil and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") and v.Character.Ragdolled.Value == false and v.Character:FindFirstChild("Mirage") == nil then
+if v.Character.Head:FindFirstChild("UnoReverseCard") == nil or game.Players.LocalPlayer.leaderstats.Glove.Value == "Error" then
+Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
+                        if _G.ReachSlapArua >= Magnitude then
+gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+                end
+end
+end
+end
+                end
+end)
+pcall(function()
+for _, c in pairs(workspace:GetChildren()) do
+if string.find(c.Name, "Å") and c:FindFirstChild("HumanoidRootPart") then
+Magnitude1 = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - c.HumanoidRootPart.Position).Magnitude
+                        if _G.ReachSlapArua >= Magnitude1 then
+gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(c:WaitForChild(SlapAuraCharacter),true)
+                    end
+end
+                    end
+end)
+pcall(function()
+if game.Workspace:FindFirstChild("Balls") then
+for i, g in pairs(workspace:GetChildren()) do
+if g.Name == "Balls" then
+for i, z in pairs(g:GetChildren()) do
+if string.find(z.Name, "'s Ball") then
+Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - z.Position).Magnitude
+if _G.ReachSlapArua >= Magnitude then
+game:GetService("ReplicatedStorage").Events.BeachBall:FireServer(z, Vector3.new(game:GetService("Workspace").CurrentCamera.CFrame.LookVector.X, 0, game:GetService("Workspace").CurrentCamera.CFrame.LookVector.Z).Unit * 0.2)
+end
+end
+end
+end
+end
+end
+end)
+task.wait(.1)
+end
+while SlapAura and SlapAuraFriend == "Not Fight" and _G.SlapAuraChoose == "Normal" do
+pcall(function()
+for i, v in pairs(game.Players:GetChildren()) do
+                    if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
+if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("stevebody") == nil and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") and not game.Players.LocalPlayer:IsFriendsWith(v.UserId) and v.Character.Ragdolled.Value == false and v.Character:FindFirstChild("Mirage") == nil then
+if v.Character.Head:FindFirstChild("UnoReverseCard") == nil or game.Players.LocalPlayer.leaderstats.Glove.Value == "Error" then
+Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
+                        if _G.ReachSlapArua >= Magnitude then
+gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+                    end
+end
+end
+end
+                end
+end)
+pcall(function()
+for i, c in pairs(workspace:GetChildren()) do
+if string.find(c.Name, "Å") and c:FindFirstChild("HumanoidRootPart") then
+Magnitude1 = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - c.HumanoidRootPart.Position).Magnitude
+                        if _G.ReachSlapArua >= Magnitude1 then
+gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(c:WaitForChild(SlapAuraCharacter),true)
+                    end
+end
+                    end
+end)
+pcall(function()
+if game.Workspace:FindFirstChild("Balls") then
+for i, g in pairs(workspace:GetChildren()) do
+if g.Name == "Balls" then
+for i, z in pairs(g:GetChildren()) do
+if string.find(z.Name, "'s Ball") then
+Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - z.Position).Magnitude
+if _G.ReachSlapArua >= Magnitude then
+game:GetService("ReplicatedStorage").Events.BeachBall:FireServer(z, Vector3.new(game:GetService("Workspace").CurrentCamera.CFrame.LookVector.X, 0, game:GetService("Workspace").CurrentCamera.CFrame.LookVector.Z).Unit * 0.2)
+end
+end
+end
+end
+end
+end
+end)
+task.wait(.1)
+end
+elseif _G.SlapAuraChoose == "Reverse" then
+while SlapAura and _G.SlapAuraChoose == "Reverse" do
+for i,v in pairs(game.Players:GetChildren()) do
+                    if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
+if v.Character:FindFirstChild("entered") and game.Players.LocalPlayer.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("stevebody") == nil and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") then
+if v.Character.Head:FindFirstChild("UnoReverseCard") and game.Players.LocalPlayer.Character.Head:FindFirstChild("UnoReverseCard") then
+Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
+                        if _G.ReachSlapArua >= Magnitude then
+game.ReplicatedStorage.ReverseHit:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+                    end
+end
+end
+end
+                end
+task.wait()
+end
+end
+	end    
+})
+
 Slap:AddToggle({
 	Name = "Auto Slap Players { risky }",
 	Default = false,
