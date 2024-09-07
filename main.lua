@@ -549,7 +549,7 @@ end
 })
 
 Slap:AddButton({
-	Name = "Slap People Farm { too risky, reset to server hop}",
+	Name = "Slap People Farm { risky, reset to server hop}",
 	Callback = function()
 SlapTime = 999999
 local totalSlaps = 0
@@ -617,14 +617,6 @@ Slap:AddButton({
 	Name = "Copy serverhop slapples farming { PUT INTO AUTOEXEC }",
 	Callback = function()
 			 setclipboard(tostring("loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/slapfarming/main/main.lua'))()"))
-			 OrionLib:MakeNotification({Name = "Copied!",Content = "Copied script to clipboard",Image = "rbxassetid://7733658504",Time = 5})
-	 end
-})
-
-Slap:AddButton({
-	Name = "Copy slap people + slapples farming serverhop { PUT INTO AUTOEXEC }",
-	Callback = function()
-			 setclipboard(tostring("loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/slapfarmingv2/main/main.lua'))()"))
 			 OrionLib:MakeNotification({Name = "Copied!",Content = "Copied script to clipboard",Image = "rbxassetid://7733658504",Time = 5})
 	 end
 })
