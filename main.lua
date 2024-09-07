@@ -533,6 +533,7 @@ Slap:AddButton({
 	Name = "Copy serverhop slapples farming { PUT INTO AUTOEXEC }",
 	Callback = function()
 			 setclipboard(tostring("loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/slapfarming/main/main.lua'))()"))
+			 OrionLib:MakeNotification({Name = "Copied!",Content = "Copied script to clipboard",Image = "rbxassetid://7733658504",Time = 5})
 	 end
 })
 
@@ -549,14 +550,91 @@ local TeleportInGame = TeleportInPlace:AddSection({
 TeleportInGame:AddDropdown({
 	Name = "Teleport Safe Place",
 	Default = "",
-	Options = {"SafeSpotBox 1.0", "SafeSpotBox 2.0", "Bed"},
+	Options = {"SafeSpotBox 1.0", "SafeSpotBox 2.0"},
 	Callback = function(Value)
 if Value == "SafeSpotBox 1.0" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace["SafeBox"].CFrame * CFrame.new(0,5,0)
 elseif Value == "SafeSpotBox 2.0" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace["Safespot"].CFrame * CFrame.new(0,10,0)
-elseif Value == "Bed" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace["Bed"].Bed3.CFrame * CFrame.new(0,0,-1)
 end
+	end    
+})
+
+local Tab7 = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4370318685",
+	PremiumOnly = false
+})
+
+Tab7:AddToggle({
+	Name = "Autofarm Slapples",
+	Default = false,
+	Callback = function(Value)
+	    SlappleFarm = Value
+while SlappleFarm do
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") then
+for i, v in pairs(workspace.Arena.island5.Slapples:GetChildren()) do
+                if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and game.Players.LocalPlayer.Character:FindFirstChild("entered") and v.Name == "Slapple" or v.Name == "GoldenSlapple" and v:FindFirstChild("Glove") and v.Glove:FindFirstChildWhichIsA("TouchTransmitter") then
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Glove, 0)
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Glove, 1)
+                end
+            end
+       end
+task.wait()
+end
+	end    
+})
+
+Tab7:AddTextbox({
+	Name = "Change Slaps { client side }",
+	Default = "Enter Value",
+	TextDisappear = false,
+	Callback = function(Value)
+game.Workspace.NametagChanged.SlapChanged.Value = Value
+	end	  
+})
+
+Tab7:AddToggle({
+	Name = "Set Slaps { client side }",
+	Default = false,
+	Callback = function(Value)
+_G.AutoChangeSlapFake = Value
+while _G.AutoChangeSlapFake do
+if game.Players.LocalPlayer.leaderstats.Slaps.Value ~= game.Workspace.NametagChanged.SlapChanged.Value then
+game.Players.LocalPlayer.leaderstats.Slaps.Value = game.Workspace.NametagChanged.SlapChanged.Value
+end
+task.wait()
+end
+	end    
+})
+
+Tab7:AddTextbox({
+	Name = "Change Nametag { client side }",
+	Default = "Nametag",
+	TextDisappear = false,
+	Callback = function(Value)
+game.Workspace.NametagChanged.Value = Value
+	end	  
+})
+
+Tab7:AddToggle({
+	Name = "Set Nametag { client side }",
+	Default = false,
+	Callback = function(Value)
+	AutoChangeNameTag = Value
+        if AutoChangeNameTag == true and game.Players.LocalPlayer.Character:FindFirstChild("Nametag",true) then
+        game.Players.LocalPlayer.Character.Head.Nametag.TextLabel.Text = game.Workspace.NametagChanged.Value
+end
+workspace.NametagChanged.Changed:Connect(function()
+        if AutoChangeNameTag == true and game.Players.LocalPlayer.Character:FindFirstChild("Nametag",true) then
+        game.Players.LocalPlayer.Character.Head.Nametag.TextLabel.Text = game.Workspace.NametagChanged.Value
+end
+end)
+            game.Players.LocalPlayer.CharacterAdded:Connect(function()
+                if AutoChangeNameTag == true then
+repeat task.wait() until game.Players.LocalPlayer.Character:FindFirstChild("Nametag",true)
+                game.Players.LocalPlayer.Character.Head.Nametag.TextLabel.Text = game.Workspace.NametagChanged.Value
+                end
+            end)
 	end    
 })
