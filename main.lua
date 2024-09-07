@@ -529,9 +529,34 @@ end
 	 end
 })    
 
-Sbeve:AddButton({
+Slap:AddButton({
 	Name = "Copy serverhop slapples farming { PUT INTO AUTOEXEC }",
-	Callback = function()space.Lobby["Sbeve"].ClickDetector)
-			 setclipboard(tostring("loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/main/main.lua'))()"))
+	Callback = function()
+			 setclipboard(tostring("loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/slapfarming/main/main.lua'))()"))
 	 end
+})
+
+local TeleportInPlace = Window:MakeTab({
+	Name = "Teleport In-Game",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local TeleportInGame = TeleportInPlace:AddSection({
+	Name = "Teleport to game areas"
+})
+
+TeleportInGame:AddDropdown({
+	Name = "Teleport Safe Place",
+	Default = "",
+	Options = {"SafeSpotBox 1.0", "SafeSpotBox 2.0", "Bed"},
+	Callback = function(Value)
+if Value == "SafeSpotBox 1.0" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace["SafeBox"].CFrame * CFrame.new(0,5,0)
+elseif Value == "SafeSpotBox 2.0" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace["Safespot"].CFrame * CFrame.new(0,10,0)
+elseif Value == "Bed" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace["Bed"].Bed3.CFrame * CFrame.new(0,0,-1)
+end
+	end    
 })
