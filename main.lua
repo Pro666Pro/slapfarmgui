@@ -549,7 +549,7 @@ end
 })
 
 Slap:AddButton({
-	Name = "Slap People Farm { too risky, and also you can't turn it off :> }",
+	Name = "Slap People Farm { too risky, reset to server hop}",
 	Callback = function()
 SlapTime = 999999
 local totalSlaps = 0
