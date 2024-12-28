@@ -1,5 +1,7 @@
 # Slap Farm Gui (SFG)
 
+By nexer1234
+
 # Copy Script Below
 
 ```lua
