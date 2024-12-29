@@ -7,3 +7,9 @@ By nexer1234
 ```lua
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/main/main.lua'))()
 ```
+
+# Early Access
+
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/main/EarlyAccess.lua'))()
+```
