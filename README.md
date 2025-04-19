@@ -13,3 +13,6 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/slapfarmgui
 ```lua
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/main/EarlyAccess.lua'))()
 ```
+
+# Dm me on discord if you need source code
+## @nexer1234
