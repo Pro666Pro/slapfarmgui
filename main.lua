@@ -1,9 +1,8 @@
 pcall(function()
-local srvc = game:GetService("CoreGui") or game.CoreGui
 local a = Instance.new("Hint")
 a.Text = "SFG Launcher Loading..."
-a.Name = "HintGuiL"
-a.Parent = srvc
+a.Name = "HintGui"
+a.Parent = game.CoreGui
 end)
 pcall(function()
 getgenv().gethui = function() return game:GetService("CoreGui") end
@@ -81,6 +80,7 @@ local Credits = Window:CreateTab("Credits", 15781236875)
 
 local MainLabel = Main:CreateLabel("Choose version, and start farming!")
 
+_G.Version = "V4"
 local MainDropdown = Main:CreateDropdown({
    Name = "Choose Version",
    Options = {"V4"},
@@ -94,7 +94,7 @@ _G.Version = Option
 local MainButton = Main:CreateButton({
    Name = "Launch SFG",
    Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".lua" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".0.lua"))()
    end,
 })
 
@@ -135,5 +135,5 @@ Notify("Copied!", "Copied discord server link to clipboard!", 10, true)
 })
 
 pcall(function()
-CoreGui:FindFirstChild("HintGuiL"):Destroy()
+CoreGui:FindFirstChild("HintGui"):Destroy()
 end)
