@@ -135,5 +135,5 @@ Notify("Copied!", "Copied discord server link to clipboard!", 10, true)
 })
 
 pcall(function()
-CoreGui:FindFirstChild("HintGui"):Destroy()
+game.CoreGui:FindFirstChild("HintGui"):Destroy()
 end)
