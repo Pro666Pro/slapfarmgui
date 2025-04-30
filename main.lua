@@ -83,11 +83,11 @@ local Credits = Window:CreateTab("Credits", 15781236875)
 
 local MainLabel = Main:CreateLabel("Choose version, and start farming!")
 
-_G.Version = "V4"
+_G.Version = "V4.0"
 local MainDropdown = Main:CreateDropdown({
    Name = "Choose Version",
-   Options = {"V4"},
-   CurrentOption = "V4",
+   Options = {"V4.0"},
+   CurrentOption = "V4.0",
    MultiSelection = false,
    Callback = function(Option)
 _G.Version = Option
@@ -97,7 +97,7 @@ _G.Version = Option
 local MainButton = Main:CreateButton({
    Name = "Launch SFG",
    Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".lua" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".0.lua" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".luau" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".0.luau" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/Version(OBF)/".._G.Version..".lua" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/Version(OBF)/".._G.Version..".0.lua" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/Version(OBF)/".._G.Version..".luau" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/Version(OBF)/".._G.Version..".0.luau"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/Version(OBF)/".._G.Version..".lua"))()
    end,
 })
 
