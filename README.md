@@ -14,5 +14,5 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/slapfarmgui
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/main/ea.lua'))()
 ```
 
-# Dm me on discord if you need source code
+# Source code:
 ## @nexer1234
