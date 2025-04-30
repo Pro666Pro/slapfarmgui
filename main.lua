@@ -5,8 +5,11 @@ a.Name = "HintGui"
 a.Parent = game.CoreGui
 end)
 pcall(function()
-getgenv().gethui = function() return game:GetService("CoreGui") end
-gethui = function() return game:GetService("CoreGui") end
+    if getgenv then
+        getgenv().gethui = function() return game:GetService("CoreGui") or game.CoreGui end
+    end
+    _G.gethui = function() return game:GetService("CoreGui") or game.CoreGui end
+    gethui = function() return game:GetService("CoreGui") or game.CoreGui end
 end)
 pcall(function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/BypassAntiCheat/main/main.lua'))()
@@ -94,7 +97,7 @@ _G.Version = Option
 local MainButton = Main:CreateButton({
    Name = "Launch SFG",
    Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".lua" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".0.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".lua" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".0.lua" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".luau" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/".._G.Version..".0.luau" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/Version(OBF)/".._G.Version..".lua" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/Version(OBF)/".._G.Version..".0.lua" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/Version(OBF)/".._G.Version..".luau" or "https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/Version(OBF)/".._G.Version..".0.luau"))()
    end,
 })
 
