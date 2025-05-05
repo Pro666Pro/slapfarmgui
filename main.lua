@@ -19,7 +19,6 @@ Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 end)
 if success then
 print("Loaded New Rayfield")
-Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 elseif not success then
 print("Loaded Old Rayfield")
 Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/SiriusSoftwareLtd/Rayfield/main/source.lua'))()
@@ -58,6 +57,22 @@ Window = Rayfield:CreateWindow({
    }
 })
 
+-- turn table to string. nexer edition 😎 ( ttostring --> tabletostring )
+function ttostring(tbl)
+    if type(tbl) == "table" then
+        local result
+        for i, v in ipairs(tbl) do
+            result = tostring(v)
+            if i < #tbl then
+                 result = result .. ", "
+            end
+        end
+        result = result
+        return result
+    else
+        return tbl
+    end
+end
 
 function Notify(title, content, time, mode)
 time = time or 10
@@ -83,21 +98,21 @@ local Credits = Window:CreateTab("Credits", 15781236875)
 
 local MainLabel = Main:CreateLabel("Choose version, and start farming!")
 
-_G.Version = "V4.0"
+_G.Version = "V4.1"
 local MainDropdown = Main:CreateDropdown({
    Name = "Choose Version",
-   Options = {"V4.0"},
-   CurrentOption = "V4.0",
+   Options = {"V4.0", "V4.1"},
+   CurrentOption = "V4.1",
    MultiSelection = false,
    Callback = function(Option)
-_G.Version = Option
+_G.Version = ttostring(Option)
    end,
 })
 
 local MainButton = Main:CreateButton({
    Name = "Launch SFG",
    Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/Version(OBF)/".._G.Version..".lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/slapfarmgui/refs/heads/main/Versions/(".._G.Version..").lua"))()
    end,
 })
 
