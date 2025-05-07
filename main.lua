@@ -98,11 +98,11 @@ local Credits = Window:CreateTab("Credits", 15781236875)
 
 local MainLabel = Main:CreateLabel("Choose version, and start farming!")
 
-_G.Version = "V4.1"
+_G.Version = "V4.2"
 local MainDropdown = Main:CreateDropdown({
    Name = "Choose Version",
-   Options = {"V4.0", "V4.1"},
-   CurrentOption = "V4.1",
+   Options = {"V4.2","V4.1","V4.0"},
+   CurrentOption = "V4.2",
    MultiSelection = false,
    Callback = function(Option)
 _G.Version = ttostring(Option)
