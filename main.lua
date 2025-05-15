@@ -138,16 +138,7 @@ end
    end,
 })
 
-local EAVer = EA:CreateLabel("[ Early Access. Version: V4.4. Work In Progress ]")
-local EALabel = EA:CreateLabel("What's new:")
-local EALabel_1 = EA:CreateLabel("1. Added intellect modes to bot { WalkToPoint and PathService }")
-local EALabel_2 = EA:CreateLabel("2. Added high intellect mode to bot { You can switch it either low or high }")
-local EALabel_3 = EA:CreateLabel("3. Now bot uses abilities more often { Chances from 350 per millisecond to 300 }")
-local EALabel_4 = EA:CreateLabel("4. Reworked some things of bot")
-local EALabel_5 = EA:CreateLabel("5. Upgraded snow farm { Breaking velocity }")
-local EALabel_6 = EA:CreateLabel("6. Upgraded and made faster ''Any Gloves'' farms { All Three Methods }")
-local EALabel_7 = EA:CreateLabel("7. Upgraded and made faster ''Dual Glove'' farm { All Three Methods }")
-local EALabel_8 = EA:CreateLabel("8. Fixed and upgraded ''Engineer'' farm { plus no fling anymore }")
+local eagraph = EA:CreateParagraph({Title = "What's new in v4.4:", Content = "1. Added intellect modes to bot { WalkToPoint and PathService } ||||| 2. Added high intellect mode to bot { You can switch it either low or high } ||||| 3. Now bot uses abilities more often { Chances from 350 per millisecond to 300 } ||||| 4. Reworked some things of bot ||||| 5. Upgraded snow farm { Breaking velocity } ||||| 6. Upgraded and made faster ''Any Gloves'' farms { All Three Methods } ||||| 7. Upgraded and made faster ''Dual Glove'' farm { All Three Methods } ||||| 8. Fixed and upgraded ''Engineer'' farm { plus no fling anymore }"})
 
 local EALaunch = EA:CreateButton({
    Name = "Launch Slap Farm Gui",
