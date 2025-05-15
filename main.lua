@@ -138,7 +138,24 @@ end
    end,
 })
 
-local eagraph = EA:CreateParagraph({Title = "What's new in v4.4:", Content = "1. Added intellect modes to bot { WalkToPoint and PathService } ||||| 2. Added high intellect mode to bot { You can switch it either low or high } ||||| 3. Now bot uses abilities more often { Chances from 350 per millisecond to 300 } ||||| 4. Reworked some things of bot ||||| 5. Upgraded snow farm { Breaking velocity } ||||| 6. Upgraded and made faster ''Any Gloves'' farms { All Three Methods } ||||| 7. Upgraded and made faster ''Dual Glove'' farm { All Three Methods } ||||| 8. Fixed and upgraded ''Engineer'' farm { plus no fling anymore }"})
+conup = [[
+1. Added intellect modes to bot { WalkToPoint and PathService }
+
+2. Added high intellect mode to bot { You can switch it either low or high }
+
+3. Now bot uses abilities more often { Chances from 350 per millisecond to 300 }
+
+4. Reworked some things of bot
+
+5. Upgraded snow farm { Breaking velocity }
+
+6. Upgraded and made faster ''Any Gloves'' farms { All Three Methods }
+
+7. Upgraded and made faster ''Dual Glove'' farm { All Three Methods }
+
+8. Fixed and upgraded ''Engineer'' farm { plus no fling anymore }
+]]
+local eagraph = EA:CreateParagraph({Title = "What's new in v4.4:", Content = ""..conup..""})
 
 local EALaunch = EA:CreateButton({
    Name = "Launch Slap Farm Gui",
