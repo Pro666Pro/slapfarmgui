@@ -91,8 +91,16 @@ Rayfield:Notify({
 })
 end
 
+-- Get Price { regional price }
+function GetPrice(id)
+local product_id = tonumber(id) or id
+local product_info = game:GetService("MarketplaceService"):GetProductInfo(id)
+local product_price = product_info.PriceInRobux
+return tostring(product_price)
+end
+
 local Main = Window:CreateTab("Main", 98952570395426)
-local EA = Window:CreateTab("Early Access", 98952570395426)
+local EA = Window:CreateTab("Early Access [ V 4.4 ]", 98952570395426)
 local Other = Window:CreateTab("Other", 12809025337)
 local Credits = Window:CreateTab("Credits", 15781236875)
 
@@ -116,7 +124,41 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/slapfarmgui
    end,
 })
 
-local EALabel = EA:CreateLabel("No Early Access. [ Yet ]")
+eaprice = pcall(GetPrice(1004435429)) or 49
+local EAPrice = EA:CreateLabel("Early Access Cost "..eaprice.." Robux!")
+local BuyEA = EA:CreateButton({
+   Name = "Buy Early Access",
+   Callback = function()
+if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game:GetService("Players").LocalPlayer.UserId, 1004435429) then
+    Notify("Error!", "Arleady Own It!")
+else
+    setclipboard(tostring("https://www.roblox.com/game-pass/1004435429"))
+    Notify("Success!", "Copied Link To Gamepass! [ Put In Browser ]", 10, true)
+end
+   end,
+})
+
+local EAVer = EA:CreateLabel("[ Early Access. Version: V4.4. Work In Progress ]")
+local EALabel = EA:CreateLabel("What's new:")
+local EALabel_1 = EA:CreateLabel("1. Added intellect modes to bot { WalkToPoint and PathService }")
+local EALabel_2 = EA:CreateLabel("2. Added high intellect mode to bot { You can switch it either low or high }")
+local EALabel_3 = EA:CreateLabel("3. Now bot uses abilities more often { Chances from 350 per millisecond to 300 }")
+local EALabel_4 = EA:CreateLabel("4. Reworked some things of bot")
+local EALabel_5 = EA:CreateLabel("5. Upgraded snow farm { Breaking velocity }")
+local EALabel_6 = EA:CreateLabel("6. Upgraded and made faster ''Any Gloves'' farms { All Three Methods }")
+local EALabel_7 = EA:CreateLabel("7. Upgraded and made faster ''Dual Glove'' farm { All Three Methods }")
+local EALabel_8 = EA:CreateLabel("8. Fixed and upgraded ''Engineer'' farm { plus no fling anymore }")
+
+local EALaunch = EA:CreateButton({
+   Name = "Launch Slap Farm Gui",
+   Callback = function()
+if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game:GetService("Players").LocalPlayer.UserId, 1004435429) then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/OpenSourceScripts/refs/heads/main/SlapFarmGui/Versions/(v4.4).luau"))()
+else
+    Notify("Error!", "You Have To Buy Early Access!")
+end
+   end,
+})
 
 local ContactButton = Other:CreateButton({
    Name = "Contact Support",
