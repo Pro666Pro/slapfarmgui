@@ -92,9 +92,9 @@ Rayfield:Notify({
 end
 
 -- Get Price { regional price }
-function GetPrice(id)
-local product_id = tonumber(id) or id
-local product_info = game:GetService("MarketplaceService"):GetProductInfo(id)
+function GetPrice(assetid)
+local product_id = tonumber(assetid) or assettid
+local product_info = game:GetService("MarketplaceService"):GetProductInfo(product_id)
 local product_price = product_info.PriceInRobux
 return tostring(product_price)
 end
@@ -124,7 +124,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/slapfarmgui
    end,
 })
 
-eaprice = pcall(GetPrice(1004435429)) or 49
+eaprice = pcall(GetPrice(129411076024624)) or 49
 local EAPrice = EA:CreateLabel("Early Access Cost "..eaprice.." Robux!")
 local BuyEA = EA:CreateButton({
    Name = "Buy Early Access",
