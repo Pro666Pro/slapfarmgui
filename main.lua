@@ -104,6 +104,8 @@ local EA = Window:CreateTab("Early Access [ V 4.4 ]", 98952570395426)
 local Other = Window:CreateTab("Other", 12809025337)
 local Credits = Window:CreateTab("Credits", 15781236875)
 
+local APLabel = Main:CreateLabel("We're sorry for early access being unusable for over a week, now it is fixed and should work properly! Thanks for your patience!")
+
 local MainLabel = Main:CreateLabel("Choose version, and start farming!")
 
 _G.Version = "V4.3"
@@ -124,6 +126,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro666Pro/slapfarmgui
    end,
 })
 
+local APEALabel = EA:CreateLabel("We're sorry for early access being unusable for over a week, now it is fixed and should work properly! Thanks for your patience!")
 eaprice = pcall(GetPrice(129411076024624)) or 49
 local EAPrice = EA:CreateLabel("Early Access Cost "..eaprice.." Robux!")
 local BuyEA = EA:CreateButton({
