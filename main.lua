@@ -1,13 +1,8 @@
 pcall(function()
-local a = Instance.new("Hint")
-a.Text = "SFG Launcher Loading..."
-a.Name = "HintGui"
-a.Parent = game.CoreGui
-end)
-pcall(function()
-    if getgenv then
-        getgenv().gethui = function() return game:GetService("CoreGui"):FindFirstChild("RobloxGui") or game.CoreGui end
-    end
+assd = Instance.new("Hint")
+assd.Text = "SFG Launcher Loading..."
+assd.Name = "HintGui"
+assd.Parent = (game:FindService("CoreGui") and game:GetService("CoreGui")) or game:GetService("Workspace")
 end)
 pcall(function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/BypassAntiCheat/main/main.lua'))()
@@ -200,5 +195,7 @@ Notify("Copied!", "Copied discord server link to clipboard!", 10, true)
 })
 
 pcall(function()
-game.CoreGui:FindFirstChild("HintGui"):Destroy()
+if assd ~= nil then
+assd:Destroy()
+end
 end)
