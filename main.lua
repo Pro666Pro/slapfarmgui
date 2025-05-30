@@ -6,22 +6,20 @@ a.Parent = game.CoreGui
 end)
 pcall(function()
     if getgenv then
-        getgenv().gethui = function() return game:GetService("CoreGui") or game.CoreGui end
+        getgenv().gethui = function() return game:GetService("CoreGui"):FindFirstChild("RobloxGui") or game.CoreGui end
     end
-    _G.gethui = function() return game:GetService("CoreGui") or game.CoreGui end
-    gethui = function() return game:GetService("CoreGui") or game.CoreGui end
 end)
 pcall(function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/BypassAntiCheat/main/main.lua'))()
 end)
 local success, error = pcall(function()
-Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 end)
 if success then
 print("Loaded New Rayfield")
 elseif not success then
 print("Loaded Old Rayfield")
-Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/SiriusSoftwareLtd/Rayfield/main/source.lua'))()
+Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/SiriusSoftwareLtd/Rayfield/main/source.lua"))()
 end
 
 Window = Rayfield:CreateWindow({
@@ -61,16 +59,12 @@ Window = Rayfield:CreateWindow({
 function ttostring(tbl)
     if type(tbl) == "table" then
         local result
-        for i, v in ipairs(tbl) do
+        for i,v in ipairs(tbl) do
             result = tostring(v)
-            if i < #tbl then
-                 result = result .. ", "
-            end
         end
-        result = result
-        return result
+        return tostring(result)
     else
-        return tbl
+        return tostring(tbl)
     end
 end
 
